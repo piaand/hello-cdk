@@ -15,7 +15,9 @@ export class HelloCdkStack extends cdk.Stack {
     // });
 
     const myFirstBucket = new s3.Bucket(this, 'MyFirstBucket', {
-      versioned: true
+      versioned: true,
+      autoDeleteObjects: true,
+      removalPolicy: cdk.RemovalPolicy.DESTROY
     });
   }
 }
